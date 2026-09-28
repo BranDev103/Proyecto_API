@@ -1,0 +1,68 @@
+/*
+@use "variables";
+@use "base";
+@use "components";
+@use "layout";
+
+*/
+
+$primaryColor: #830000;
+$colorTextPrimary: #ffffff;
+$fontHeader: "cinematografica";
+
+@font-face {
+  font-family: "cinematografica";
+  src: url("/css/Cinematografica-Bold-trial.ttf");
+}
+
+@mixin flex {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+@mixin navHeader {
+  margin-right: 2.2em;
+  padding-bottom: 10px;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+}
+
+header {
+  background-color: #830000;
+  box-shadow:
+    rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+
+header img {
+  width: 20%;
+}
+
+header nav {
+  @include flex;
+  @include navHeader;
+}
+
+header nav a {
+  color: $colorTextPrimary;
+  font-style: none;
+  text-decoration: none;
+  padding: 10px;
+  font-family: $fontHeader;
+  font-size: 1.8em;
+  border-right: 2px solid white;
+  padding: 10px 25px;
+  transition: all 0.2s ease-in;
+}
+
+header nav a:nth-last-child(1) {
+  border-right: none;
+}
+
+header nav a:hover {
+  color: #ff0000;
+}
